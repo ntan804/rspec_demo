@@ -1,7 +1,6 @@
 require 'spec_helper'
 require 'zombie'
 
-
 describe Zombie do
   it 'is invalid without a name' do
     zombie = Zombie.new
@@ -13,7 +12,7 @@ describe Zombie do
     zombie.name.should match(/Ash Clone \d/)
   end
 
-  xit 'include tweets' do
+  it 'include tweets' do
     tweet1 = Tweet.new(status: "Uuuuunhhhhh")
     tweet2 = Tweet.new(status: "Arrrrgggg")
     zombie = Zombie.new(name: 'Ash', tweets: [tweet1, tweet2])
@@ -21,9 +20,9 @@ describe Zombie do
     zombie.tweets.should include(tweet2)
   end
 
-  xit 'starts with two weapons' do
-    zombie = Zombie.new(name: 'Ash')
-    zombie.weapons.count.should == 2 #Or zombie.should have(2).weapons
+  it 'starts with two weapons' do
+    zombie = Zombie.new
+    zombie.weapon.count.should == 2 #Or zombie.should have(2).weapons
   end
 
   it 'changes the number of Zombies' do

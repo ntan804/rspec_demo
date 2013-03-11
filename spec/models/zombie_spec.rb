@@ -36,4 +36,15 @@ describe Zombie do
       ActiveRecord::RecordInvalid
     )
   end
+
+  it { should respond_to(:name) }
+
+  #refactored code example
+  let(:rzombie) { Zombie.create }
+  subject { rzombie }
+
+  its(:name) { should be_nil }
+  it { rzombie.weapon.count.should == 2 }
+
 end
+

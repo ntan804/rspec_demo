@@ -11,13 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130304035732) do
-
-  create_table "tweets", :force => true do |t|
-    t.string   "status"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+ActiveRecord::Schema.define(:version => 20130311025346) do
 
   create_table "zombies", :force => true do |t|
     t.string   "name"
@@ -25,6 +19,8 @@ ActiveRecord::Schema.define(:version => 20130304035732) do
     t.datetime "updated_at", :null => false
     t.string   "weapon"
     t.string   "tweets"
+    t.string   "craving"
+    t.boolean  "vegetarian"
   end
 
 end

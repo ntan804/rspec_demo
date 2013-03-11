@@ -46,5 +46,20 @@ describe Zombie do
   its(:name) { should be_nil }
   it { rzombie.weapon.count.should == 2 }
 
+
+  #Hooks in context, metadata and filters
+  subject(:hzombie) { Zombie.new } #same as let and subject in previous example
+  before { hzombie.hungry! }
+
+  it 'craves brains', slow: true do #Do not run slow examples by rspec --tag ~slow
+    hzombie.craving.should == "brains"
+  end
+
+  it 'is hungry', focus: true do #run only FOCUSed examples by rspec --tag focus 
+    hzombie.craving.should_not be_nil
+  end
+
+  #Share example
+  it_behaves_like 'the unnamed'
 end
 

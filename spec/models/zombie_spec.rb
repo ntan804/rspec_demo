@@ -39,7 +39,7 @@ describe Zombie do
 
   it { should respond_to(:name) }
 
-  #refactored code example
+  #Refactored code example
   let(:rzombie) { Zombie.create }
   subject { rzombie }
 
